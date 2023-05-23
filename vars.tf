@@ -137,6 +137,7 @@ variable "home_directory_type" {
   description = <<-EOT
     The type of landing directory (folder) you mapped for your users' home directory. 
     **Valid values:** `PATH`, `LOGICAL`
+    Default: `PATH`
   EOT
 }
 
