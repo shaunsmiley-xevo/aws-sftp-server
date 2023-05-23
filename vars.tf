@@ -138,6 +138,7 @@ variable "home_directory_type" {
     The type of landing directory (folder) you mapped for your users' home directory. 
     **Valid values:** `PATH`, `LOGICAL`
   EOT
+}
 
 variable "tags" {
   type        = map(string)
