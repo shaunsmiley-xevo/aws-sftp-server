@@ -131,6 +131,14 @@ variable "sftp_users_ssh_key" {
   EOT
 }
 
+variable "home_directory_type" {
+  type = string
+  default = "PATH"
+  description = <<-EOT
+    The type of landing directory (folder) you mapped for your users' home directory. 
+    **Valid values:** `PATH`, `LOGICAL`
+  EOT
+
 variable "tags" {
   type        = map(string)
   default     = {}

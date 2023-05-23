@@ -253,12 +253,13 @@ POLICY
 }
 
 resource "aws_transfer_user" "this" {
-  for_each       = var.sftp_users
-  server_id      = local.server_id
-  user_name      = each.key
-  home_directory = "/${each.value}"
-  role           = aws_iam_role.user[each.key].arn
-  tags           = merge({ User = each.key }, var.tags)
+  for_each						= var.sftp_users
+  server_id      			= local.server_id
+  user_name      			= each.key
+  home_directory 			= "/${each.value}"
+  home_directory_type = var.home_directory_type
+  role								= aws_iam_role.user[each.key].arn
+  tags           			= merge({ User = each.key }, var.tags)
 }
 
 resource "aws_transfer_ssh_key" "this" {
